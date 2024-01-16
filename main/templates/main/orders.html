@@ -7,14 +7,18 @@
 
 {% block content %}
 
+<a href="{% url 'AddOrder' %}">
+    <button class="add">Добавить заказ<span>+</span></button>
+</a>
+
 <table>
     <tr>
-        <td>Номер</td>
-        <td>Дата заказа</td>
-        <td>Продукт</td>
-        <td>Клиент</td>
-        <td>Кол-во</td>
-        <td>Цена</td>
+        <th>Номер</th>
+        <th>Дата заказа</th>
+        <th>Продукт</th>
+        <th>Клиент</th>
+        <th>Кол-во</th>
+        <th>Цена</th>
     </tr>
     
     {% if orders %}

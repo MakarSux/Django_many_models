@@ -34,6 +34,23 @@ def AddProduct(request):
     }
     return render(request, 'main/addProd.html', context)
     
+def AddOrder(request):
+    error = ''
+    if request.method == "POST":
+        form = AddOrdersForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('orders')
+        else:
+            error = "Форма была неверной"
+
+    form = AddOrdersForm()
+    context = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'main/addOrders.html', context)
+
 
 class ProductDelete(DeleteView):
     model = Products
