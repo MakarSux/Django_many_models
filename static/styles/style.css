@@ -113,3 +113,8 @@ main .product .product__items .product__btns a:nth-child(1) button{
     background-color: rgb(255, 202, 56);
     color: rgb(0, 0, 0);
 }
+
+main .customers{
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}

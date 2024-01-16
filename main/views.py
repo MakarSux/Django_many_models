@@ -9,6 +9,14 @@ def Index(request):
     return render(request, 'main/index.html', {'prod': prod})
 
 
+def Clients(request):
+    clients = Customers.objects.all()
+    return render(request, 'main/clients.html', {'clients':clients})
+
+def Order(request):
+    orders = Orders.objects.all()
+    return render(request, 'main/orders.html', {'orders':orders})
+
 def AddProduct(request):
     error = ''
     if request.method == "POST":
@@ -35,4 +43,5 @@ class ProductDelete(DeleteView):
 class ProductUpdate(UpdateView):
     model = Products
     success_url = "/"
-    template_name = "main/delete.html"
+    template_name = "main/addProd.html"
+    form_class = AddProdForm
