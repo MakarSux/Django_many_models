@@ -59,7 +59,12 @@ main{
     margin: 30px auto;
 }
 
-main button.add{
+main a{
+    text-decoration: none;
+}
+
+main a .add,
+main form a .add{
     font-size: 18px;
     font-weight: 600;
     border: none;
@@ -70,7 +75,8 @@ main button.add{
     cursor: pointer;
 }
 
-main button.add span{
+main a .add span,
+main form a .add span{
     font-size: 22px;
     font-weight: 900;
 }

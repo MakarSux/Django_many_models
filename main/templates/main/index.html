@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<a href="{% url 'addProd' %}">
+<a href="{% url 'AddProduct' %}">
     <button class="add">Добавить товар <span>+</span></button>
 </a>
 {% if prod %}
@@ -18,8 +18,6 @@
             <div class="product__btns">
                 <a href="{% url 'deleteProd' el.id %}"><button href="">Изменить</button></a>
                 <a href="{% url 'deleteProd' el.id %}"><button >Удалить</button></a>
-                
-                
             </div>
         </div>
     </div>

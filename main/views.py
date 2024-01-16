@@ -9,7 +9,7 @@ def Index(request):
     return render(request, 'main/index.html', {'prod': prod})
 
 
-def AddProd(request):
+def AddProduct(request):
     error = ''
     if request.method == "POST":
         form = AddProdForm(request.POST)
@@ -19,15 +19,20 @@ def AddProd(request):
         else:
             error = "Форма была неверной"
 
-        form = AddProdForm()
-        context = {
-            'form': form,
-            'error': error
-        }
-        return render(request, 'main/addProd.html', context)
+    form = AddProdForm()
+    context = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'main/addProd.html', context)
     
 
 class ProductDelete(DeleteView):
+    model = Products
+    success_url = "/"
+    template_name = "main/delete.html"
+
+class ProductUpdate(UpdateView):
     model = Products
     success_url = "/"
     template_name = "main/delete.html"
